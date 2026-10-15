@@ -11,3 +11,7 @@ jsDelivr: `https://cdn.jsdelivr.net/gh/Freon717/ae69-photos@<коммит>/…`.
 Обновление — `scripts/sync-photo-mirror.py` в репозитории сайта; после пуша
 новый коммит этого репозитория вписывается в `PHOTO_MIRROR_REF`
 (`src/lib/photo-src.ts`).
+- `s/320/…`, `s/640/…` — уменьшенные копии фото шире 640 px (для плиток
+  каталога), `scripts/photo-sizes.py` в репозитории сайта (2026-10-15). После
+  пуша нового коммита — `node scripts/warm-photo-mirror.mjs <коммит>`, чтобы
+  jsDelivr заранее взял все файлы, и только потом новый `PHOTO_MIRROR_REF`.
